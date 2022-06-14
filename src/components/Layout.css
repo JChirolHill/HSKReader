@@ -1,0 +1,28 @@
+.header {
+    background-color: var(--primary-dark);
+    border-bottom: 5px solid var(--secondary-light);
+    padding: 0.5em 2em;
+    margin-bottom: 1em;
+}
+
+h1 {
+    font-family: var(--font-title);
+    margin: 0;
+}
+
+.container {
+    margin: 2em;
+}
+
+.main-content {
+    width: 80%;
+    border: 2px solid var(--secondary-light);
+    border-radius: 30px;
+    padding: 1em;
+}
+
+.sidebar {
+    width: 20%;
+    padding: 0 1em;
+    font-size: 20px;
+}

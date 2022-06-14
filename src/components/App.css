@@ -1,0 +1,77 @@
+:root {
+    --bg-primary: #161a1d;
+    --bg-secondary: #263d42;
+    --primary-dark: #1d7874;
+    --primary-light: #86baa1;
+    --secondary-dark: #9f732d;
+    --secondary-light: #d7af70;
+    --contrast: #f8f7ed;
+    --error: #cc0000;
+
+    --hsk1: #ffb3b3;
+    --hsk2: #ffd9b3;
+    --hsk3: #ffffb3;
+    --hsk4: #ccffcc;
+    --hsk5: #b3d1ff;
+    --hsk6: #e6ccff;
+
+    --font-title: 'Kaushan Script', cursive;
+    --font-body: 'Ubuntu', sans-serif;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--contrast);
+    font-family: var(--font-body);
+    font-size: 20px;
+    margin: 0;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.m-half {
+    margin: 0.5em;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.low-opacity {
+    opacity: 0.6;
+}
+
+.btn {
+    background-color: var(--secondary-light);
+    color: var(--contrast);
+    font-family: var(--font-title);
+    font-size: 24px;
+    text-shadow: 1px 1px 10px var(--secondary-dark);
+    border: none;
+    border-radius: 30px;
+    padding: 0.5em 1em;
+    margin: 1em;
+    transition: all 0.2s;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: var(--primary-light);
+    text-shadow: 1px 1px 10px var(--primary-dark);
+    transform: scale(1.05);
+}
+
+.text-error {
+    color: var(--error);
+    font-size: 16px;
+}

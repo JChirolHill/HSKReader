@@ -1,0 +1,13 @@
+textarea {
+    background-color: var(--bg-secondary);
+    color: var(--contrast);
+    font-size: 24px;
+    box-sizing: border-box;
+    resize: none;
+    width: 100%;
+}
+
+textarea:focus {
+    border: 3px solid var(--secondary-light);
+    outline: none;
+}
