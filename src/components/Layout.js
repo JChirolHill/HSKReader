@@ -1,12 +1,18 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import "./Layout.css";
 
 const Layout = () => {
+  const navigate = useNavigate();
+
+  const handleTitleClick = () => {
+    navigate("/");
+  };
+
   return (
     <div>
       <div className="header">
-        <h1>Chinese HSK Reader</h1>
+        <h1 onClick={handleTitleClick}>Chinese HSK Reader</h1>
       </div>
       <div className="container">
         <Outlet />

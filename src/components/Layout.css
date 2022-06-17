@@ -10,6 +10,10 @@ h1 {
     margin: 0;
 }
 
+h1:hover {
+    cursor: pointer;
+}
+
 .container {
     margin: 2em;
 }

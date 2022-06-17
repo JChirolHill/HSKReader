@@ -1,4 +1,5 @@
 import React, { createContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import ToggleMenu from "./ToggleMenu";
 import HSKReaderContent from "./HSKReaderContent";
 
@@ -8,6 +9,7 @@ export const HSKReaderContext = createContext({
 });
 
 const HSKReader = () => {
+  const navigate = useNavigate();
   const [hskToggles, setHskToggles] = useState([
     false,
     false,
@@ -28,6 +30,10 @@ const HSKReader = () => {
     setMasterIsActive,
   };
 
+  const handleReturnEditModeClick = () => {
+    navigate("/");
+  };
+
   return (
     <HSKReaderContext.Provider value={value}>
       <div className="d-flex">
@@ -35,6 +41,9 @@ const HSKReader = () => {
           <HSKReaderContent />
         </div>
         <div className="sidebar">
+          <button className="btn" onClick={handleReturnEditModeClick}>
+            Return to Edit Mode
+          </button>
           <ToggleMenu />
         </div>
       </div>

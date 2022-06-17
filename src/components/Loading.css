@@ -64,3 +64,20 @@
         transform: translate(24px, 0);
     }
 }
+
+.fade-in-out {
+    opacity: 1;
+    animation-name: fade-in-out;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes fade-in-out {
+    50% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

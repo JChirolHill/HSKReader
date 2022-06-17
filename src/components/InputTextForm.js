@@ -30,7 +30,7 @@ const InputTextForm = (props) => {
         <textarea
           className="main-content"
           rows={20}
-          value={text}
+          value={props.text ? props.text : text}
           onChange={(e) => setText(e.target.value)}
         />
         <div className="sidebar">

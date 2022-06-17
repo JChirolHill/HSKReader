@@ -13,7 +13,10 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<InputTextForm onChangeText={setText} />} />
+          <Route
+            index
+            element={<InputTextForm text={text} onChangeText={setText} />}
+          />
           <Route path="reader" element={<HSKReader text={text} />} />
           <Route path="*" element={<NoPage />} />
         </Route>

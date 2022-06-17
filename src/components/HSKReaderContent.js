@@ -14,7 +14,7 @@ const HSKReaderContent = () => {
       });
 
       setSegmented(data);
-      console.log("Data", data);
+      // console.log("Data", data);
     };
 
     segmentText();
@@ -31,7 +31,11 @@ const HSKReaderContent = () => {
       }
     });
 
-    return <div key={`sentence-${index}`}>{renderedSentence}</div>;
+    return (
+      <div className="mb-1" key={`sentence-${index}`}>
+        {renderedSentence}
+      </div>
+    );
   });
   return <>{renderedSentences.length > 0 ? renderedSentences : <Loading />}</>;
 };
