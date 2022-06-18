@@ -17,7 +17,11 @@ const InputTextForm = (props) => {
       );
     } else {
       setError("");
-      props.onChangeText(text);
+
+      // Remove all leading and trailing spaces on each line
+      let noLeadingTrailing = text.replace(/\n+\s+/gm, "\n");
+
+      props.onChangeText(noLeadingTrailing);
       navigate("/reader");
     }
   };

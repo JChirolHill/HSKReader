@@ -8,7 +8,7 @@ export const HSKReaderContext = createContext({
   setHskToggles: () => {},
 });
 
-const HSKReader = () => {
+const HSKReader = ({ text }) => {
   const navigate = useNavigate();
   const [hskToggles, setHskToggles] = useState([
     false,
@@ -38,7 +38,7 @@ const HSKReader = () => {
     <HSKReaderContext.Provider value={value}>
       <div className="d-flex">
         <div className="main-content">
-          <HSKReaderContent />
+          <HSKReaderContent text={text} />
         </div>
         <div className="sidebar">
           <button className="btn" onClick={handleReturnEditModeClick}>

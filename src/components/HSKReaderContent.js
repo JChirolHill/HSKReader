@@ -3,14 +3,14 @@ import axios from "axios";
 import Loading from "./Loading";
 import HoverableWord from "./HoverableWord";
 
-const HSKReaderContent = () => {
+const HSKReaderContent = ({ text }) => {
   const [segmented, setSegmented] = useState([]);
 
   useEffect(() => {
     const segmentText = async () => {
       const baseURL = "https://chinese-segmentor.herokuapp.com/segmentor";
-      const { data } = await axios.get(baseURL, {
-        params: {},
+      const { data } = await axios.post(baseURL, {
+        text,
       });
 
       setSegmented(data);
@@ -18,7 +18,7 @@ const HSKReaderContent = () => {
     };
 
     segmentText();
-  }, []);
+  }, [text]);
 
   const renderedSentences = segmented.map((sentence, index) => {
     const renderedSentence = sentence.map((word, wordIndex) => {
