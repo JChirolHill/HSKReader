@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import "./InputTextForm.css";
 
 const InputTextForm = (props) => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState(props.text ? props.text : "");
   const [error, setError] = useState("");
+  const [font] = useOutletContext();
   const navigate = useNavigate();
 
   const handleSubmit = (event) => {
@@ -33,8 +34,9 @@ const InputTextForm = (props) => {
       <form onSubmit={handleSubmit} className="d-flex">
         <textarea
           className="main-content"
+          style={{ fontFamily: font }}
           rows={20}
-          value={props.text ? props.text : text}
+          value={text}
           onChange={(e) => setText(e.target.value)}
         />
         <div className="sidebar">

@@ -47,6 +47,7 @@ const ToggleMenu = () => {
           masterIsActive={masterIsActive}
           masterIsOn={masterIsOn}
           onToggleChange={onToggleChange}
+          color={label.toLowerCase().replace(/\s/g, "")}
         />
       );
     });

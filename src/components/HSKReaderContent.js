@@ -3,7 +3,7 @@ import axios from "axios";
 import Loading from "./Loading";
 import HoverableWord from "./HoverableWord";
 
-const HSKReaderContent = ({ text }) => {
+const HSKReaderContent = ({ text, font }) => {
   const [segmented, setSegmented] = useState([]);
 
   useEffect(() => {
@@ -32,7 +32,11 @@ const HSKReaderContent = ({ text }) => {
     });
 
     return (
-      <div className="mb-1" key={`sentence-${index}`}>
+      <div
+        className="mb-1"
+        key={`sentence-${index}`}
+        style={{ fontFamily: font }}
+      >
         {renderedSentence}
       </div>
     );

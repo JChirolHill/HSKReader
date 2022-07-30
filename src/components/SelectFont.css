@@ -1,0 +1,27 @@
+select {
+    background-color: var(--bg-secondary);
+    color: var(--contrast);
+    padding: 0.5em 2em 0.5em 1em;
+    border-radius: 10px;
+    border: solid var(--bg-secondary) 1px;
+    -webkit-appearance: none;
+    appearance: none;
+    font-family: inherit;
+}
+
+select:focus {
+    outline: none;
+}
+
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "▼";
+    font-size: 0.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 10px;
+    position: absolute;
+}

@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useOutletContext } from "react-router-dom";
 import ToggleMenu from "./ToggleMenu";
 import HSKReaderContent from "./HSKReaderContent";
 
@@ -10,6 +10,7 @@ export const HSKReaderContext = createContext({
 
 const HSKReader = ({ text }) => {
   const navigate = useNavigate();
+  const [font] = useOutletContext();
   const [hskToggles, setHskToggles] = useState([
     false,
     false,
@@ -21,6 +22,7 @@ const HSKReader = ({ text }) => {
   ]);
   const [masterIsOn, setMasterIsOn] = useState(false);
   const [masterIsActive, setMasterIsActive] = useState(false);
+  const [isSidebarVisible, setIsSidebarVisible] = useState(true);
   const value = {
     hskToggles,
     setHskToggles,
@@ -36,11 +38,25 @@ const HSKReader = ({ text }) => {
 
   return (
     <HSKReaderContext.Provider value={value}>
+      <div
+        className="hideSidebar"
+        onClick={() => setIsSidebarVisible(!isSidebarVisible)}
+      >
+        <i
+          className={`fa-solid fa-chevron-${
+            isSidebarVisible ? "right" : "left"
+          }`}
+        ></i>
+        {isSidebarVisible && <>&nbsp;&nbsp;&nbsp; Hide Sidebar</>}
+      </div>
       <div className="d-flex">
         <div className="main-content">
-          <HSKReaderContent text={text} />
+          <HSKReaderContent text={text} font={font} />
         </div>
-        <div className="sidebar">
+        <div
+          className="sidebar"
+          style={{ display: isSidebarVisible ? "block" : "none" }}
+        >
           <button className="btn" onClick={handleReturnEditModeClick}>
             Return to Edit Mode
           </button>

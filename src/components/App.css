@@ -39,6 +39,10 @@ body {
     justify-content: center;
 }
 
+.align-center {
+    align-items: center;
+}
+
 .m-half {
     margin: 0.5em;
 }
@@ -49,6 +53,10 @@ body {
 
 .text-center {
     text-align: center;
+}
+
+.text-right {
+    text-align: right;
 }
 
 .low-opacity {
