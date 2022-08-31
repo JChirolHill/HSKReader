@@ -8,7 +8,8 @@ const HSKReaderContent = ({ text, font }) => {
 
   useEffect(() => {
     const segmentText = async () => {
-      const baseURL = "https://chinese-segmentor.herokuapp.com/segmentor";
+      const baseURL =
+        "https://vercel-chinese-segmentor-pixieindia-yahoocom.vercel.app/segmentor";
       const { data } = await axios.post(baseURL, {
         text,
       });
