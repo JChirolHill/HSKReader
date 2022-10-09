@@ -3,7 +3,7 @@
     border-bottom: 1px solid var(--secondary-dark);
 }
 
-.hoverable-hsk {
+.hoverable-hsk:hover {
     background-color: var(--bg-secondary);
     border-radius: 5px;
     cursor: pointer;
