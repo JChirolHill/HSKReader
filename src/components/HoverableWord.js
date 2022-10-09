@@ -14,7 +14,7 @@ const HoverableWord = ({ word }) => {
     ? `var(--hsk${word.hsk})`
     : "";
   return (
-    <span className="tooltip" style={{ color }}>
+    <span className="tooltip hoverable-hsk" style={{ color }}>
       {word.zh}
       <span className="tooltipText">
         {word.zh}
