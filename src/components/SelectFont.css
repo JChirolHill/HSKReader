@@ -7,6 +7,8 @@ select {
     -webkit-appearance: none;
     appearance: none;
     font-family: inherit;
+    margin-top: 2em;
+    cursor: pointer;
 }
 
 select:focus {
@@ -15,13 +17,14 @@ select:focus {
 
 .select-wrapper {
     position: relative;
+    text-align: center;
 }
 
 .select-wrapper::after {
     content: "▼";
     font-size: 0.5rem;
-    top: 50%;
+    top: calc(1em + 50%);
     transform: translateY(-50%);
-    right: 10px;
+    right: 24px;
     position: absolute;
 }

@@ -15,8 +15,8 @@
     --hsk5: #b3d1ff;
     --hsk6: #e6ccff;
 
-    --font-title: 'Kaushan Script', cursive;
-    --font-body: 'Ubuntu', sans-serif;
+    --font-title: "Kaushan Script", cursive;
+    --font-body: "Ubuntu", sans-serif;
 }
 
 body {
