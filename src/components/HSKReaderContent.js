@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
-import axios from "axios";
-import Loading from "./Loading";
+import React, { useEffect, useState } from "react";
+
 import HoverableWord from "./HoverableWord";
+import Loading from "./Loading";
+import axios from "axios";
 import { isPunctuation } from "../helpers";
+import { useNavigate } from "react-router-dom";
 
 const HSKReaderContent = ({ text, font }) => {
     const [segmented, setSegmented] = useState([]);
@@ -12,7 +13,7 @@ const HSKReaderContent = ({ text, font }) => {
     useEffect(() => {
         const segmentText = async () => {
             const baseURL =
-                "https://chinese-segmentor-pixieindia-yahoocom.vercel.app/segmentor";
+                "https://chinese-segmentor-pvgr-qyk0qkokn-pixieindiayahoocoms-projects.vercel.app/segmentor";
             const { data } = await axios.post(baseURL, {
                 text,
             });
@@ -39,7 +40,10 @@ const HSKReaderContent = ({ text, font }) => {
 
                 // No HSK word, just plain word
                 return (
-                    <span class="hoverable-non-hsk" key={`word-${wordIndex}`}>
+                    <span
+                        className="hoverable-non-hsk"
+                        key={`word-${wordIndex}`}
+                    >
                         {word}
                     </span>
                 );
